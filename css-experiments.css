@@ -1,0 +1,11 @@
+body{
+    background-color: #111;
+    color: white;
+}
+
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="main.css" rel="stylesheet" media="screen" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Resume, HTML, Security, Embedded, Systems">
+        <meta name="author" content="Mico Guinto">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gallery</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <nav>
+                    <label for="hamburger">&#9776;</label>
+                    <input type="checkbox" id="hamburger">
+                    <ul id="nav-menu">
+                        <li><a class="menu" href="home.html">Home</a></li>
+                        <li><a class="menu" href="about.html">About</a></li>
+                        <li><a class="menu" href="resume.html">Resume</a></li>
+                        <li><a class="menu" href="gallery.html" id="active">Gallery</a></li>
+                        <li><a class="menu" href="links.html">Links</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section>
+                <h2 id="photo-gallery">Photo Gallery</h2>
+                <figure id="gallery">
+                    <img srcset=" images/aeresize.jpg 400w, images/aecompressed33.jpg 1800w" sizes="(max-width: 450px) 225px, 450px" id="fluffy-mascot" alt="cute mascot">
+                    <img srcset="images/guidasilva2resize.jpg 400w, images/guidasilva2.jpg 1800w" sizes="(max-width: 450px) 225px, 450px" id="stuntman" alt="mico w/ well known stuntman">
+                    <img srcset="images/cn50percent.jpg 480w, images/cn.jpg 960w" sizes="(max-width: 450px) 240px, 480px" id="cn-tower" alt="cn tower">
+                    <img srcset="images/niagararesize.jpg 480w, images/niagara.jpg 960w" sizes="(max-width: 450px) 240px, 480px" id="niagara" alt="niagara falls" >
+                </figure>
+            </section>
+        </main>
+    </body>
+</html>

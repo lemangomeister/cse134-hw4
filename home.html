@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="main.css" rel="stylesheet" media="screen" type="text/css">
+        <script src="emptyjavascript.js"></script>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Resume, HTML, Security, Embedded, Systems">
+        <meta name="author" content="Mico Guinto">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mico Guinto</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <nav>
+                    <label for="hamburger">&#9776;</label>
+                    <input type="checkbox" id="hamburger">
+                    <ul id="nav-menu">
+                        <li><a class="menu" href="home.html" id="active">Home</a></li>
+                        <li><a class="menu" href="about.html">About</a></li>
+                        <li><a class="menu" href="resume.html">Resume</a></li>
+                        <li><a class="menu" href="gallery.html">Gallery</a></li>
+                        <li><a class="menu" href="links.html">Links</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <br>
+                <section id="home-grid">
+                <picture class="home-photo1">
+                    <!-- <source media="(min-width:1024px)" type ="image/png" srcset="images/toobright.png" >
+                    <source media="(max-width:1023px)" type="image/png" srcset="images/toobright50percent.png">
+                    <source media="(max-width:450px)" type="image/png" srcset="images/toobright25percent.png"> -->
+                    <img srcset="images/toobright25percent.png 250w, images/toobright.png 1000w" sizes="(max-width: 1024px) 240px, 500px " src="images/toobright.png" alt="picture of mico" class="home-image-responsive">
+                </picture>
+                    <h2 id="home-name">Mico Guinto</h2><br>
+                    <h2 id="home-university">University of California</h2><br>
+                    <h2 id="home-city">San Diego</h2><br>
+            </section>
+            <!-- <section>
+                <h3>Projects</h3>
+                <details>
+                    <summary>Project 1: catHead</summary>
+                    A video game project made during AP Computer Science high school class
+                </details>
+                <details>
+                    <summary>Project 2: Forward Error Correction Processor</summary>
+                    Three-program specific purpose processor created using SystemVerilog, Python, and modified form of MIPS
+                    <aside>
+                        <p>This was the hardest project so far</p>
+                    </aside>
+                </details>
+                <details>
+                    <summary>Project 3: File Compressor</summary>
+                    File compressor implemented in C++ that uses Huffman coding to reduce file sizes containing ASCII items 
+                </details>
+            </section> -->
+            <br>
+        </main>
+    </body>
+</html>
