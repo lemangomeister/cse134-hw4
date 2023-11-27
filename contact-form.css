@@ -1,0 +1,72 @@
+:root{
+    --main-background-color: #111;
+    --text-color: white;
+    --triton-blue: rgb(0, 149, 230);
+    --triton-yellow: #ffcd00;
+    --sample-color: color-mix(in srgb,#f57d1b, lime);
+}
+
+/* navbar */
+#active{
+    background-color: var(--triton-yellow);
+    color: var(--tri);
+    font-weight: bolder;
+}
+
+li > a.menu{
+    margin: 0.5em;
+    padding : 1em;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+li > a:hover{
+    background-color: white;
+    color: black;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 1.25em;
+}
+
+ul#nav-menu{
+    /* position: relative; */
+    list-style-type: none;
+    justify-content: center;
+    display : flex;
+    color : black;
+    /* background-color: var(--main-background-color); */
+    margin: 0;
+    padding : 0;
+}
+
+/* label{
+    visibility: hidden;
+} */
+
+input#hamburger{ 
+    visibility: hidden;
+}
+/* navbar */
+
+body {
+    background-color: var(--triton-blue);
+    font-family: 'Gill sans', 'Trebuchet MS', sans-serif;
+}
+
+form {
+    margin: 5em auto;
+    /* padding-top: 5em; */
+    width: 10vw;
+    /* border: 1px solid #ccc; */
+    
+}
+
+div {
+    padding: 0 1em 0 auto;
+    color: var(--triton-yellow);
+}
