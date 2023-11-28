@@ -327,6 +327,11 @@ body{
 
     /* navbar */
 
+    /* #hamburger-label, #hamburger{
+        display: none;
+    } */
+
+
     #active{
         background-color: white;
         color: black;
