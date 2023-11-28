@@ -1,18 +1,22 @@
 
 const btn = document.querySelector(".button-theme");
 
+if(localStorage.getItem("lightMode") === null){
+    localStorage.lightMode = "disabled";
+}
+
 function switchTheme() {
-    if(localStorage.getItem("darkMode") === "enabled"){
+    if(localStorage.getItem("lightMode") === "enabled"){
         document.body.classList.toggle("light-theme");
-        localStorage.darkMode = "disabled";
+        localStorage.lightMode = "disabled";
     }
     else {
         document.body.classList.toggle("light-theme");
-        localStorage.darkMode = "enabled";
+        localStorage.lightMode = "enabled";
     }
 }
 
-if(localStorage.getItem("darkMode") === "enabled"){
+if(localStorage.getItem("lightMode") === "enabled"){
     document.body.classList.toggle("light-theme");
 }
 
