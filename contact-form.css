@@ -9,7 +9,7 @@
 /* navbar */
 #active{
     background-color: var(--triton-yellow);
-    color: var(--tri);
+    color: black;
     font-weight: bolder;
 }
 
@@ -66,7 +66,24 @@ form {
     
 }
 
-div {
+:required{
+    background-color: var(--triton-yellow);
+}
+
+:user-invalid{
+    background-color: salmon;
+}
+
+span.req{
+    color: red;
+}
+
+:user-invalid > output.errorEmail, output.errorName{
+    content: "/Error";
+}
+
+
+div{
     padding: 0 1em 0 auto;
     color: var(--triton-yellow);
 }

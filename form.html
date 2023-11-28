@@ -2,47 +2,58 @@
 <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <link href="contact-form.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="main.css" rel="stylesheet" media="screen" type="text/css">
+    <script async src="script.js"></script>
     <title>Contact Form</title>
     </head>
     <body>
         <main>
             <header>
                 <nav>
+                    <button class="button-theme">Theme</button>
+                    <label for="hamburger" id="hamburger-label">&#9776;</label>
+                    <input type="checkbox" id="hamburger">
                     <ul id="nav-menu">
                         <li><a class="menu" href="home.html">Home</a></li>
                         <li><a class="menu" href="about.html">About</a></li>
                         <li><a class="menu" href="resume.html">Resume</a></li>
                         <li><a class="menu" href="gallery.html">Gallery</a></li>
                         <li><a class="menu" href="links.html">Links</a></li>
-                        <li><a class="menu" href="contact-form.html" id="active">Contact Form</a></li>
+                        <li><a class="menu" href="form.html" id="active">Contact Form</a></li>
                     </ul>
                 </nav>
             </header>
             <form action="https://httpbin.org/post" method="POST">
                 <div>
+                    <span class="req">*</span>
                     <label for="fullName">Name:</label>
                     <br>
-                    <input type="text" name="fullName" id="fullName" required>
+                    <input type="text" name="fullName" id="fullName" required pattern="[A-Za-z]*">
+                    <output for="fullName" class="errorName"></output>
+                    <output for="fullName" class="infoName"></output>
                 </div>
                     <br>
                 <div>
+                    <span class="req">*</span>
                     <label for="email">Email:</label>
                     <br>
                     <input type="email" name="email" id="email" required>
+                    <output for="email" class="errorEmail"></output>
+                    <output for="email" class="infoEmail"></output>
                 </div>
                     <br>
                 <div>
+                    <span class="req">*</span>
                     <label for="comments">Comments:</label>
                     <br>
-                    <textarea name="comments" id="comments" required></textarea>
+                    <input type="text" name="comments" id="comments" pattern="^[A-Za-z0-9 ,.\'-]+$" required></input>
                 </div>
                     <br>
                 <div>
                     <input type="hidden" name="possible_bot" id="bot" value="true">
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="submit-button">Submit</button>
                 </div>
             </form>
     </main>

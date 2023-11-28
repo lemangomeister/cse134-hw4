@@ -10,8 +10,10 @@
 :root{
     --main-background-color: #111;
     --text-color: white;
-    --triton-blue: rgb(0, 149, 230);
+    --triton-blue: #00629B;
     --triton-yellow: #ffcd00;
+    --triton-stone: #B6B1A9;
+    --triton-gold: #C69214;
     --sample-color: color-mix(in srgb,#f57d1b, lime);
 }
 
@@ -20,8 +22,51 @@ body{
     font-family: 'Gill sans', 'Trebuchet MS', sans-serif;
 }
 
+@media (scripting: none){
+    .button-theme{
+        display: none;
+    }
+}
+
+.light-theme{
+    background-color: #f2f3f4;
+    color: black;
+
+    #active{
+        background-color: black;
+        color: white;
+        font-weight: bolder;
+    }
+
+    li > a.menu{
+        color: black;
+    }
+
+    li > a:hover{
+        background-color: black;
+        color: white;
+    }
+
+    div > label{
+        color: black;
+    }
+
+    .button-theme, #submit-button{
+        background-color: black;
+        color: white;
+    }
+
+    .button-theme:hover, #submit-button:hover{
+        background-color: gray;
+    }
+
+    .about, .links, #photo-gallery, #resume-title{
+        color: black;
+    }
+}
+
 @keyframes home-name-animation {
-    0% {color: var(--text-color, white);}
+    0% {color: var(--triton-gold, #747678);}
     33% {color: var(--triton-yellow, yellow);}
     66% {color: var(--triton-blue, blue);}
 }
@@ -29,12 +74,12 @@ body{
 @keyframes home-university-animation {
     0% {color: var(--triton-yellow, yellow);}
     33% {color: var(--triton-blue, blue);}
-    66% {color: var(--text-color, white);}
+    66% {color: var(--triton-gold, #747678);}
 }
 
 @keyframes home-city-animation {
     0% {color: var(--triton-blue, blue);}
-    33% {color: var(--text-color, white);}
+    33% {color: var(--triton-gold, #747678);}
     66% {color: var(--triton-yellow, yellow);}
 }
 
@@ -301,7 +346,8 @@ body{
     }
 
     nav {
-        position: sticky;
+        /* position: sticky; */
+        /* display: grid; */
         top: 0;
         margin: 0;
         padding: 0;
@@ -309,17 +355,17 @@ body{
     }
 
     ul#nav-menu{
-        /* position: relative; */
+        position: sticky;
         list-style-type: none;
         justify-content: center;
-        display : flex;
+        display: flex;
         color : black;
-        background-color: var(--main-background-color);
+        /* background-color: var(--main-background-color); */
         margin: 0;
         padding : 0;
     }
 
-    label{
+    label#hamburger-label{
         visibility: hidden;
     }
 
@@ -458,7 +504,7 @@ h2#home-name{
     animation-name: home-name-animation;
     animation-duration: 3s;
     animation-iteration-count: infinite;
-    color: var(--text-color, green);
+    color: var(--triton-gold);
 
 }
 
@@ -507,6 +553,13 @@ li {
     }
 }
 
+
+nav > button{
+    float: right;
+    margin: 1em 1em 0 0;
+    padding : 0.15em;
+}
+
 ol{
     list-style-type: none;
 }
@@ -519,3 +572,36 @@ ol > li {
     padding-top: 1em;
 }
 
+form {
+    margin: 5em auto;
+    /* padding-top: 5em; */
+    width: 10vw;
+    /* border: 1px solid #ccc; */
+    
+}
+
+:required{
+    background-color: var(--triton-yellow);
+}
+
+:user-invalid{
+    background-color: salmon;
+}
+
+span.req{
+    color: red;
+}
+
+:user-invalid > output.errorEmail, output.errorName{
+    content: "/Error";
+}
+
+
+div{
+    padding: 0 1em 0 auto;
+    color: var(--triton-yellow);
+}
+
+div > label{
+    color: white;
+}

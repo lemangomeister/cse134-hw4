@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link href="main.css" rel="stylesheet" media="screen" type="text/css">
-        <script src="emptyjavascript.js"></script>
+        <script async src="script.js"></script>
         <meta charset="UTF-8">
         <meta name="keywords" content="Resume, HTML, Security, Embedded, Systems">
         <meta name="author" content="Mico Guinto">
@@ -13,7 +13,9 @@
         <main>
             <header>
                 <nav>
-                    <label for="hamburger">&#9776;</label>
+                    <button class="button-theme">Theme</button>
+                    <!-- <noscript>Theme changer requires JS</noscript> -->
+                    <label for="hamburger" id="hamburger-label">&#9776;</label>
                     <input type="checkbox" id="hamburger">
                     <ul id="nav-menu">
                         <li><a class="menu" href="home.html" id="active">Home</a></li>
@@ -21,9 +23,10 @@
                         <li><a class="menu" href="resume.html">Resume</a></li>
                         <li><a class="menu" href="gallery.html">Gallery</a></li>
                         <li><a class="menu" href="links.html">Links</a></li>
-                        <li><a class="menu" href="contact-form.html">Contact Form</a></li>
+                        <li><a class="menu" href="form.html">Contact Form</a></li>
                     </ul>
                 </nav>
+                
             </header>
             <br>
                 <section id="home-grid">
