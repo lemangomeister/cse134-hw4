@@ -3,6 +3,8 @@ let inputName = document.getElementById('fullName');
 let email = document.getElementById('email');
 let inputNameError = document.querySelector(".errorName");
 let emailError = document.querySelector(".errorEmail");
+let charLimit = document.querySelector(".character-limit");
+let commentArea = document.getElementById("comments");
 
 
 inputName.addEventListener("input", () =>{
@@ -33,6 +35,10 @@ form.addEventListener("submit", event => {
   
 })
 
+form.addEventListener("input", () => {
+  commentArea.onkeydown = characterLimit();
+})
+
 function showEmailError(){
   if(email.validity.valueMissing){
     emailError.textContent = "U gotta enter an email bruv";
@@ -52,5 +58,20 @@ function showNameError(){
   else if(!inputName.checkValidity()){
     inputNameError.textContent = "Only names using the Latin alphabet are accepted";
     inputNameError.className = "errorName-active";
+  }
+}
+
+function characterLimit(){
+  charLimit.textContent = commentArea.maxLength - commentArea.value.length;
+
+
+  if(charLimit.textContent <= 50){
+    charLimit.className = "character-limit-warning";
+    if(charLimit.textContent == 0){
+      charLimit.textContent = "Character limit reached!";
+    }
+  }
+  else{
+    charLimit.className = "character-limit";
   }
 }

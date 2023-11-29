@@ -628,3 +628,7 @@ div > label{
     color: white;
     background-color: #900;
 }
+
+.character-limit-warning{
+    color: red;
+}

@@ -45,7 +45,8 @@
                     <span class="req">*</span>
                     <label for="comments">Comments:</label>
                     <br>
-                    <textarea type="text" name="comments" id="comments" pattern="^[A-Za-z0-9 ,.\'-]+$" required></textarea>
+                    <textarea type="text" name="comments" id="comments" maxlength="200" pattern="^[A-Za-z0-9 ,.\'-]+$" required></textarea>
+                    <output for="comments" class="character-limit"></output>
                 </div>
                     <br>
                 <div>
