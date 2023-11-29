@@ -11,7 +11,7 @@ inputName.addEventListener("input", () =>{
   if(inputName.value === ""){
     inputName.setCustomValidity("U got a name or nah ?");
   }
-  else if(inputName.patternMismatch){
+  else if(inputName.checkValidity() === false){
     inputName.setCustomValidity("Only names using the Latin alphabet are accepted");
   }
   else{
