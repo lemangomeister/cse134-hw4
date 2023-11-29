@@ -10,7 +10,7 @@ inputName.addEventListener("input", () =>{
     inputNameError.textContent = "";
     inputNameError.className = "errorName";
   }
-  else{ showError(); }
+  else{ showNameError(); }
 } )
 
 email.addEventListener("input", () =>{
@@ -18,36 +18,33 @@ email.addEventListener("input", () =>{
     emailError.textContent = "";
     emailError.className = "errorEmail";
   }
-  else { showError(); }
-
-  if(email.value == "" || email.value == null){
-    email.setCustomValidity("U got an email or nah ?");
-  }
-  else if(email.checkValidity() === false || email.typeMismatch()){
-    email.setCustomValidity("Dat email no gud fam, put a legit one frfr");
-  }
-  else{
-    email.setCustomValidity("");
-  }
+  else { showEmailError(); }
 })
 
 form.addEventListener("submit", event => {
-  if(!inputName.validity.valid || !email.validity.valid){
-    showError();
+  if(!inputName.validity.valid){
+    showNameError();
     event.preventDefault();
   }
+  if(!email.validity.valid){
+    showEmailError();
+    event.preventDefault();
+  }
+  
 })
 
-function showError(){
+function showEmailError(){
   if(email.validity.valueMissing){
     emailError.textContent = "U gotta enter an email bruv";
     emailError.className = "errorEmail-active";
   }
-  else if(!email.checkValidity()){
+  else if(email.validity.typeMismatch){
     emailError.textContent = "What you put ain't an email address fam";
     emailError.className = "errorEmail-active";
   }
+}
 
+function showNameError(){
   if(inputName.validity.valueMissing){
     inputNameError.textContent = "U got a name or nah ?";
     inputNameError.className = "errorName-active";
