@@ -11,17 +11,6 @@ inputName.addEventListener("input", () =>{
     inputNameError.className = "errorName";
   }
   else{ showError(); }
-
-  // if(inputName.value === ""){
-  //   inputName.setCustomValidity("U got a name or nah ?");
-  // }
-  // else if(inputName.checkValidity() === false){
-  //   inputName.setCustomValidity("Only names using the Latin alphabet are accepted");
-  // }
-  // else{
-  //   inputName.valid = true;
-  //   inputName.setCustomValidity("");
-  // }
 } )
 
 email.addEventListener("input", () =>{
@@ -31,15 +20,15 @@ email.addEventListener("input", () =>{
   }
   else { showError(); }
 
-  // if(email.value == "" || email.value == null){
-  //   email.setCustomValidity("U got an email or nah ?");
-  // }
-  // else if(email.checkValidity() === false || email.typeMismatch()){
-  //   email.setCustomValidity("Dat email no gud fam, put a legit one frfr");
-  // }
-  // else{
-  //   email.setCustomValidity("");
-  // }
+  if(email.value == "" || email.value == null){
+    email.setCustomValidity("U got an email or nah ?");
+  }
+  else if(email.checkValidity() === false || email.typeMismatch()){
+    email.setCustomValidity("Dat email no gud fam, put a legit one frfr");
+  }
+  else{
+    email.setCustomValidity("");
+  }
 })
 
 form.addEventListener("submit", event => {
@@ -55,7 +44,7 @@ function showError(){
     emailError.className = "errorEmail-active";
   }
   else if(!email.checkValidity()){
-    emailError.textContent - "What you put ain't an email address fam";
+    emailError.textContent = "What you put ain't an email address fam";
     emailError.className = "errorEmail-active";
   }
 
