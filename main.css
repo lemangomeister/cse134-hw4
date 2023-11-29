@@ -621,14 +621,35 @@ div > label{
     border-radius: 0 0 5px 5px;
   
     box-sizing: border-box;
+    /* display: none; */
 }
 
 .errorName-active, .errorEmail-active{
     margin-top: 1em;
     color: white;
     background-color: #900;
+    /* display: none; */
+    /* animation-name: error-message;
+    animation-duration: 3s; */
+    animation: error-message 4s linear 1 forwards;
 }
 
 .character-limit-warning{
     color: red;
+}
+
+@keyframes error-message{
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    1% {
+        opacity: 1;
+        display: block;
+    }
+
+    100%{
+        opacity: 0;
+        display: none;
+    }
 }

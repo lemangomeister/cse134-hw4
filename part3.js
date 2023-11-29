@@ -43,10 +43,18 @@ function showEmailError(){
   if(email.validity.valueMissing){
     emailError.textContent = "U gotta enter an email bruv";
     emailError.className = "errorEmail-active";
+    emailError.addEventListener("animationend", () => {
+      emailError.textContent = "";
+      emailError.className = "errorEmail";
+    })
   }
   else if(email.validity.typeMismatch){
     emailError.textContent = "What you put ain't an email address fam";
     emailError.className = "errorEmail-active";
+    emailError.addEventListener("animationend", () => {
+      emailError.textContent = "";
+      emailError.className = "errorEmail";
+    })
   }
 }
 
@@ -54,10 +62,18 @@ function showNameError(){
   if(inputName.validity.valueMissing){
     inputNameError.textContent = "U got a name or nah ?";
     inputNameError.className = "errorName-active";
+    inputNameError.addEventListener("animationend", () => {
+      inputNameError.textContent = "";
+      inputNameError.className = "errorName";
+    })
   }
   else if(!inputName.checkValidity()){
     inputNameError.textContent = "Only names using the Latin alphabet are accepted";
     inputNameError.className = "errorName-active";
+    inputNameError.addEventListener("animationend", () => {
+      inputNameError.textContent = "";
+      inputNameError.className = "errorName";
+    })
   }
 }
 
@@ -75,3 +91,4 @@ function characterLimit(){
     charLimit.className = "character-limit";
   }
 }
+
