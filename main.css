@@ -51,6 +51,10 @@ body{
         color: black;
     }
 
+    div > .character-limit{
+        color: var(--triton-blue);
+    }
+
     .button-theme, #submit-button{
         background-color: black;
         color: white;
