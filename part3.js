@@ -1,45 +1,70 @@
+let form = document.querySelector("form");
 let inputName = document.getElementById('fullName');
 let email = document.getElementById('email');
-let comment = document.getElementById('comments');
-// console.log("name: " + inputName.checkValidity());
-// console.log("email: " + email.checkValidity());
-// console.log("comments: " + comment.checkValidity());
-// console.log(comment);
+let inputNameError = document.querySelector(".errorName");
+let emailError = document.querySelector(".errorEmail");
 
 
 inputName.addEventListener("input", () =>{
-  if(inputName.value === ""){
-    inputName.setCustomValidity("U got a name or nah ?");
+  if(inputName.validity.valid){
+    inputNameError.textContent = "";
+    inputNameError.className = "errorName";
   }
-  else if(inputName.checkValidity() === false){
-    inputName.setCustomValidity("Only names using the Latin alphabet are accepted");
-  }
-  else{
-    inputName.setCustomValidity("");
-  }
+  else{ showError(); }
+
+  // if(inputName.value === ""){
+  //   inputName.setCustomValidity("U got a name or nah ?");
+  // }
+  // else if(inputName.checkValidity() === false){
+  //   inputName.setCustomValidity("Only names using the Latin alphabet are accepted");
+  // }
+  // else{
+  //   inputName.valid = true;
+  //   inputName.setCustomValidity("");
+  // }
 } )
 
 email.addEventListener("input", () =>{
-  if(email.value === ""){
-    email.setCustomValidity("U got an email or nah ?");
+  if(email.validity.valid){
+    emailError.textContent = "";
+    emailError.className = "errorEmail";
   }
-  else if(email.checkValidity() === false){
-    email.setCustomValidity("Dat email no gud fam, put a legit one frfr");
-  }
-  else{
-    email.setCustomValidity("");
+  else { showError(); }
+
+  // if(email.value == "" || email.value == null){
+  //   email.setCustomValidity("U got an email or nah ?");
+  // }
+  // else if(email.checkValidity() === false || email.typeMismatch()){
+  //   email.setCustomValidity("Dat email no gud fam, put a legit one frfr");
+  // }
+  // else{
+  //   email.setCustomValidity("");
+  // }
+})
+
+form.addEventListener("submit", event => {
+  if(!inputName.validity.valid || !email.validity.valid){
+    showError();
+    event.preventDefault();
   }
 })
 
+function showError(){
+  if(email.validity.valueMissing){
+    emailError.textContent = "U gotta enter an email bruv";
+    emailError.className = "errorEmail-active";
+  }
+  else if(!email.checkValidity()){
+    emailError.textContent - "What you put ain't an email address fam";
+    emailError.className = "errorEmail-active";
+  }
 
-comment.addEventListener("input", () => {
-  if(comment.value.length === 0){
-    comment.setCustomValidity("Share somethin fam");
+  if(inputName.validity.valueMissing){
+    inputNameError.textContent = "U got a name or nah ?";
+    inputNameError.className = "errorName-active";
   }
-  else if(comment.checkValidity() === false){
-    comment.setCustomValidity("Some characters are not accepted");
+  else if(!inputName.checkValidity()){
+    inputNameError.textContent = "Only names using the Latin alphabet are accepted";
+    inputNameError.className = "errorName-active";
   }
-  else{
-    comment.setCustomValidity("");
-  }
-})
+}

@@ -610,3 +610,21 @@ div{
 div > label{
     color: white;
 }
+
+.errorName, .errorEmail {
+    width: 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: var(--triton-yellow);
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+}
+
+.errorName-active, .errorEmail-active{
+    margin-top: 1em;
+    color: white;
+    background-color: #900;
+}
