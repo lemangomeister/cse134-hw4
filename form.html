@@ -3,6 +3,7 @@
     <head>
     <meta charset="UTF-8">
     <link href="main.css" rel="stylesheet" media="screen" type="text/css">
+    <script async src="theme.js"></script>
     <script async src="part3.js"></script>
     <title>Contact Form</title>
     </head>
@@ -23,12 +24,12 @@
                     </ul>
                 </nav>
             </header>
-            <form action="https://httpbin.org/post" method="POST">
+            <form action="https://httpbin.org/post" method="POST" id="contact-form">
                 <div>
                     <span class="req">*</span>
                     <label for="fullName">Name:</label>
                     <br>
-                    <input type="text" name="fullName" id="fullName" required pattern="[A-Za-z]*">
+                    <input type="text" name="fullName" id="fullName" required pattern="[A-Za-z ]*">
                     <output for="fullName" class="errorName"></output>
                     <output for="fullName" class="infoName"></output>
                 </div>
